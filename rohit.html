@@ -1,0 +1,217 @@
+<html>
+
+<head>
+  <title>Whatsapp</title>
+
+  <script type="text/javascript">
+    function mySubmit(e) {
+      e.preventDefault();
+      let inp = document.getElementById("number");
+      const phone = inp.value;
+      inp = document.getElementById("message");
+      const msg = encodeURI(inp.value);
+      window.open("https://wa.me/91" + phone + "?text=" + msg, "_blank").focus();
+      return false;
+    }
+  </script>
+  <style>
+    #container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    #header {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: #21B394;
+      color: #FFFFFF;
+      padding: 1%;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    #logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    #icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      margin-left: 10px
+    }
+
+    #formBody {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+
+    }
+
+    #formLeft {
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+      justify-content: space-between;
+    }
+
+    #formHeading {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      color: #21B394;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      font-size: medium;
+      width: 100%;
+      padding: 4%;
+      color: #21B394;
+      border: 2px solid #21B394;
+      border-radius: 4px;
+    }
+
+    textarea {
+      font-size: medium;
+      width: 100%;
+      padding: 4%;
+      color: #21B394;
+      border: 2px solid #21B394;
+      border-radius: 4px;
+    }
+
+    button {
+      font-size: medium;
+      width: 100%;
+      padding: 4%;
+      color: #FFFFFF;
+      background-color: #21B394;
+      border-radius: 4px;
+    }
+
+    #gif {
+      width: 60%;
+      height: 70%;
+    }
+
+    /* input {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+    }
+
+    button {
+      border-radius: 5px;
+      font-size: 30px;
+    } */
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-195372403-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-195372403-1');
+    </script> -->
+
+  <script>(function () {
+      // injected DOM script is not a content script anymore,
+      // it can modify objects and functions of the page
+      var _pushState = history.pushState;
+      history.pushState = function (state, title, url) {
+        _pushState.call(this, state, title, url);
+        window.dispatchEvent(
+          new CustomEvent('state-changed', { detail: url })
+        );
+      };
+      // repeat the above for replaceState too
+    })();</script>
+  <script>(function () {
+      // injected DOM script is not a content script anymore,
+      // it can modify objects and functions of the page
+      var _pushState = history.pushState;
+      history.pushState = function (state, title, url) {
+        _pushState.call(this, state, title, url);
+        window.dispatchEvent(
+          new CustomEvent('state-changed', { detail: url })
+        );
+      };
+      // repeat the above for replaceState too
+    })();</script>
+  <script>(function () {
+      // injected DOM script is not a content script anymore,
+      // it can modify objects and functions of the page
+      var _pushState = history.pushState;
+      history.pushState = function (state, title, url) {
+        _pushState.call(this, state, title, url);
+        window.dispatchEvent(
+          new CustomEvent('state-changed', { detail: url })
+        );
+      };
+      // repeat the above for replaceState too
+    })();</script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
+  <div id="container">
+    <div id="header">
+      <a href="https://whatsapp.com/">
+        <div id="logo">
+          <img src="./whatsapp.svg" id="icon" />
+          <h3>Whatsapp</h3>
+        </div>
+      </a>
+      <h2>Send whatsapp message without saving contacts</h2>
+    </div>
+    <div id="formBody">
+      <div id="formLeft">
+        <p id="formHeading">Send your message to any number without saving it in your phone with just one click</p>
+        <form onsubmit="return mySubmit(event)" autocomplete="on">
+          <input id="number" placeholder="Mobile number" autocomplete="on"><br />
+          <textarea rows="4" cols="50" id="message" placeholder="Message" autocomplete="on"></textarea><br />
+          <button type="submit">GO</button>
+        </form>
+      </div>
+
+      <img src="./transcribing.gif" id="gif" />
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>
